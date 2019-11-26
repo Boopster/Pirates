@@ -4,6 +4,7 @@ import NavBar from '../NavBar.js';
 import PirateList from '../components/pirates/PirateList';
 import Request from '../helpers/request';
 import PirateContainer from './Pirates/PirateContainer';
+import ShipContainer from './Ships/ShipContainer';
 
 class MainContainer extends Component {
 
@@ -19,7 +20,10 @@ class MainContainer extends Component {
       <Route path="/pirates" render={(props) =>{
         return <PirateContainer/>
       }}/>
-
+      {/* GET ALL SHIPS */}
+      <Route path="/ships" render={(props) =>{
+        return <ShipContainer/>
+      }}/>
       </Switch>
 
 
