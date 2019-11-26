@@ -2,6 +2,7 @@ import React, {Component, Fragment} from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Request from '../../helpers/request';
 import ShipList from '../../components/ships/ShipList';
+import ShipCreateForm from '../../components/ships/ShipCreateForm';
 
 class ShipContainer extends Component {
   constructor(props){
@@ -19,11 +20,25 @@ class ShipContainer extends Component {
     })
   }
 
+  handlePost(ship) {
+    const request = new Request();
+    request.post('api/ships', ship)
+    .then(()=> {
+      window.location='/ships';
+    })
+  }
+
   render(){
     return(
       <Router>
         <Fragment>
           <Switch>
+
+          <Route exact path="/ships/new"
+          render={(props) => {
+            return <ShipCreateForm
+            onFormSubmit={this.handlePost}/>
+          }}/>
 
           <Route render={(props)=>{
             return <ShipList
