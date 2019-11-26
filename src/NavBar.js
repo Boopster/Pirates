@@ -16,6 +16,9 @@ const NavBar = (props) => {
       <a href="/ships">Ships</a>
       </li>
       <li className="navLink">
+      <a href="/ships/new">Create Ship</a>
+      </li>
+      <li className="navLink">
       <a href="/raids">Raids</a>
       </li>
       </ul>
