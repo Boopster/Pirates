@@ -10,7 +10,7 @@ class PirateCreateForm extends Component {
       lastName: "",
       age: 0
     }
-    this.handleFirstName = this.handleFirstName.bind(this);
+    this.handleFirstName.bind(this);
     this.handleLastName = this.handleLastName.bind(this);
     this.handleAge = this.handleAge.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
